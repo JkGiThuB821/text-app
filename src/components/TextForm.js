@@ -16,6 +16,26 @@ export default function TextForm(props) {
     const handleOnChange = (event) => {
         setText(event.target.value)
     }
+    
+    const countWords = () =>{
+        let allWords = text.split(" ")
+
+        let count = 0;
+
+        if(text.length == 0){
+            return 0;
+        }
+        // else{
+        //     return allWords.length;
+        // }
+
+        for(let word of allWords){
+            if (word != ""){
+                count ++;
+            }
+        }
+        return count;
+    }
 
   return (
 
@@ -34,8 +54,8 @@ export default function TextForm(props) {
         </div>
         <div className="container">
             <h2>Your text summary</h2>
-            <p> Number of words: {text.split(" ").length}, Number of characters: {text.length}</p>
-            <p> Approximate reading time: {text.split(" ").length * 0.008} minutes </p> 
+            <p> Number of words: {countWords()}, Number of characters: {text.length}</p>
+            <p> Approximate reading time: {countWords() * 0.008} minutes </p> 
             {/* Average reading time per word was taken from google */}
         </div>
     </>
