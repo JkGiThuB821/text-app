@@ -6,11 +6,15 @@ export default function TextForm(props) {
     const handleUpClick =  ()=> {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Text converted to uppercase!", "success")
+
     }
 
     const handleLowClick =  ()=> {
         let newText2 = text.toLowerCase();
         setText(newText2);
+        props.showAlert("Text converted to lowercase!", "success")
+
     }
 
     const handleOnChange = (event) => {
@@ -19,6 +23,8 @@ export default function TextForm(props) {
 
     const handleClearClick = ()=>{
         setText("");
+        props.showAlert("Text cleared!", "success")
+
     }
     
     const countWords = () =>{
