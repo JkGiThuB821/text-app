@@ -5,6 +5,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+// import Footer from './components/Footer';
 
 import {
   BrowserRouter as Router,
@@ -13,6 +14,7 @@ import {
   Link,
   Routes
 } from "react-router-dom";
+import { Footer } from './components/Footer';
 
 
 
@@ -51,16 +53,28 @@ function App() {
   return (  
     <>
   <Router>
+
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh'
+    }}>
+   
   <Navbar title="Text Utility" aboutText = "About" mode = {mode} toggleMode = {toggleMode}/>
   <Alert alert = {alert}/>
   {/* <About/> */}
+        <div className='content'style={{flex:1}}>
           <Routes>
-          <Route exact path="/about" element={<About/>}>
+          <Route exact path="/about" element={<About mode={mode}/>}>
           </Route>
           <Route exact path="/" element={<TextForm heading= "Enter your text here" mode = {mode} showAlert= {showAlert}/>}>
           </Route>
         </Routes>
+        </div>
+  <Footer/>
+  </div>
   </Router>
+
     </>
   )
 }

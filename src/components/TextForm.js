@@ -54,16 +54,16 @@ export default function TextForm(props) {
             <div className='container my-5'>
             <div className="mb-3" style={{color:props.mode === 'dark'?'white':'black'}}>
                 <h1>{props.heading}</h1>
-            <textarea className="form-control" value = {text} id="myText" rows="10" onChange={handleOnChange} style={{backgroundColor:props.mode === 'dark'?'grey':'white', color:props.mode === 'dark'?'white':'black'}}> </textarea>
+            <textarea className="form-control" value = {text} id="myText" rows="10" onChange={handleOnChange} style={{backgroundColor:props.mode === 'dark'?'#13466e':'white', color:props.mode === 'dark'?'white':'black'}}> </textarea>
             </div>
-            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Upper Case</button>
-            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2" onClick={handleLowClick}>Convert to Lower Case</button>
-            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
+            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Upper Case</button>
+            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2 my-2" onClick={handleLowClick}>Convert to Lower Case</button>
+            <button className = "btn btn-sm btn-success" type="submit" class="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
 
             </div>
         
         </div>
-        <div className="container" style={{color:props.mode === 'dark'?'white':'black'}}>
+        <div className="container" style={{color:props.mode === 'dark'?'white':'black', paddingBottom: "50px"} }>
             <h2>Your text summary</h2>
             <p> Number of words: {countWords()}, Number of characters: {text.length}</p>
             <p> Approximate reading time: {countWords() * 0.008} minutes </p> 
