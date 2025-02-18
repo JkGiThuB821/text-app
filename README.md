@@ -8,4 +8,5 @@ A simple React-based text manipulation tool that allows you to modify text effor
 ## Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
+## Website link
+https://jkgithub821.github.io/text-app/
